@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/controllers/ConsultarUsuarios.dart';
+import 'package:flutter_application_1/controllers/consultarUsuarios.dart';
 
 ModalConsultarUsuarios(BuildContext context) {
   dynamic fetchUsers;

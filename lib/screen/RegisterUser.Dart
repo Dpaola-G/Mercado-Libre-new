@@ -1,105 +1,101 @@
 import 'package:flutter/material.dart';
 
-class RegistroUsuario extends StatefulWidget {
-  const RegistroUsuario({super.key});
+class PaginadeRegistro extends StatefulWidget {
+  const PaginadeRegistro({super.key});
 
   @override
-  State<RegistroUsuario> createState() => _RegistroUsuarioState();
+  State<PaginadeRegistro> createState() => _PaginadeRegistroState();
 }
 
-class _RegistroUsuarioState extends State<RegistroUsuario> {
+class _PaginadeRegistroState extends State<PaginadeRegistro> {
   final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                Image.network(
-                  "https://cdn-icons-png.flaticon.com/128/758/758669.png",
-                  height: 100,
-                  width: 100,
-                ),
-                SizedBox(height: 16),
-                Text("Debe de registrarse"),
-                SizedBox(height: 8),
-                Text("Crear una nueva cuenta"),
-                SizedBox(height: 8),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: "Nombre Completo",
-                    prefixIcon: Icon(Icons.person_2),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
+        child: Padding(
+          padding: EdgeInsets.all(8),
+          child: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  Image.network(
+                    "https://cdn-icons-png.flaticon.com/128/758/758669.png",
+                    width: 100,
+                    height: 100,
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "ir a registrarse...",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        labelText: "nombre completo",
+                        prefixIcon: Icon(Icons.person_2_sharp),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        )),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        labelText: "E-mail",
+                        prefixIcon: Icon(Icons.mail),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        )),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        labelText: "Password",
+                        prefixIcon: Icon(Icons.lock_clock_outlined),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        )),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        labelText: "Confirmar Password",
+                        prefixIcon: Icon(Icons.lock_clock_outlined),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 40,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Rgistrarse"),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 112, 173, 234),
+                          foregroundColor: Colors.white),
                     ),
                   ),
-                ),
-                SizedBox(height: 8),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: "Correo Electrónico",
-                    prefixIcon: Icon(Icons.email),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 8),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Contraseña",
-                    prefixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 8),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Confirmar Contraseña",
-                    prefixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 16),
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState?.validate() ?? false) {
-                        // Realiza la acción de registro
-                      }
-                    },
-                    child: Text("Registrarse"),
-                  ),
-                ),
-                SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("¿Ya tienes una cuenta?"),
-                    TextButton(
-                      onPressed: () {
-                        // Navegar a la página de inicio de sesión
-                      },
-                      child: Text(
-                        "Iniciar sesión",
-                        style: TextStyle(color: Colors.blue),
+                  Row(
+                    children: [
+                      Text("Tienes una cuenta?"),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Iniciar sesion",
+                          style: TextStyle(
+                            color: Colors.blue[200],
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

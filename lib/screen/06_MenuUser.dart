@@ -39,8 +39,7 @@ class _MenuUsersState extends State<MenuUsers> {
             leading: Icon(Icons.connect_without_contact_rounded),
             trailing: Icon(Icons.arrow_circle_right_outlined),
             onTap: () {
-              ModalConsultarUsuarios(
-                  context); // Llama a la función ModalConsultarUsuarios
+              ModalConsultarUsuarios(context); // Llama a la función ModalConsultarUsuarios
             },
           ),
           ListTile(

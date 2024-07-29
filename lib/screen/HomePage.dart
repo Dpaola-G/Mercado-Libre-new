@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
                   backgroundColor: Colors.white,
                   foregroundColor: Color.fromARGB(255, 214, 157, 250),
                 ),
+                
               )
             ],
           ),
